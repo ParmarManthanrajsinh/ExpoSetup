@@ -1,23 +1,25 @@
 import { useSignIn } from "@clerk/clerk-expo";
 import { Link, useRouter } from "expo-router";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
-import React from "react";
-import { AntDesign } from "@expo/vector-icons"; // Google + GitHub
+import { useState } from "react";
+import { AntDesign } from "@expo/vector-icons"; // Google + GitHub icons
 
 export default function Page() {
   const { signIn, setActive, isLoaded } = useSignIn();
   const router = useRouter();
 
-  const [emailAddress, setEmailAddress] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [emailAddress, setEmailAddress] = useState("");
+  const [password, setPassword] = useState("");
 
   const onSignInPress = async () => {
     if (!isLoaded) return;
+    
     try {
       const signInAttempt = await signIn.create({
         identifier: emailAddress,
         password,
       });
+
       if (signInAttempt.status === "complete") {
         await setActive({ session: signInAttempt.createdSessionId });
         router.replace("/");
@@ -47,7 +49,7 @@ export default function Page() {
         {/* Social buttons */}
         <View className="flex-row justify-center space-x-4 mb-6">
           <TouchableOpacity className="flex-row items-center border border-gray-300 rounded-lg px-4 py-2 mr-3">
-            <AntDesign name="google" size={20}/>
+            <AntDesign name="google" size={20} />
             <Text className="ml-2 text-gray-700">Google</Text>
           </TouchableOpacity>
           <TouchableOpacity className="flex-row items-center border border-gray-300 rounded-lg px-4 py-2">

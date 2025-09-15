@@ -21,6 +21,33 @@ export default function Page() {
             </Text>
           </Text>
 
+          {/* Convex Example Button */}
+          <Link href="/(home)/convex-example" asChild>
+            <TouchableOpacity className="w-full bg-indigo-600 rounded-lg py-3 mb-3">
+              <Text className="text-center text-white font-semibold text-base">
+                Try Convex Example
+              </Text>
+            </TouchableOpacity>
+          </Link>
+
+          {/* Auth Demo Button */}
+          <Link href="/(home)/auth-demo" asChild>
+            <TouchableOpacity className="w-full bg-green-600 rounded-lg py-3 mb-3">
+              <Text className="text-center text-white font-semibold text-base">
+                Check Auth Integration
+              </Text>
+            </TouchableOpacity>
+          </Link>
+
+          {/* Environment Variables Test Button */}
+          <Link href="/(home)/env-test" asChild>
+            <TouchableOpacity className="w-full bg-purple-600 rounded-lg py-3 mb-3">
+              <Text className="text-center text-white font-semibold text-base">
+                Test Env Variables
+              </Text>
+            </TouchableOpacity>
+          </Link>
+
           {/* Sign out button */}
           <SignOutButton />
         </View>
