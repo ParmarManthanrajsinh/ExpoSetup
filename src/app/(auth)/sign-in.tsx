@@ -2,7 +2,7 @@ import { useSignIn } from "@clerk/clerk-expo";
 import { Link, useRouter } from "expo-router";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { AntDesign, FontAwesome } from "@expo/vector-icons"; // Google + GitHub
+import { AntDesign } from "@expo/vector-icons"; // Google + GitHub
 
 export default function Page() {
   const { signIn, setActive, isLoaded } = useSignIn();
@@ -51,7 +51,7 @@ export default function Page() {
             <Text className="ml-2 text-gray-700">Google</Text>
           </TouchableOpacity>
           <TouchableOpacity className="flex-row items-center border border-gray-300 rounded-lg px-4 py-2">
-            <FontAwesome name="github" size={20} color="#333" />
+            <AntDesign name="github" size={20} color="#333" />
             <Text className="ml-2 text-gray-700">GitHub</Text>
           </TouchableOpacity>
         </View>

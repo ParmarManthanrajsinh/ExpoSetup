@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { useSignUp } from "@clerk/clerk-expo";
 import { Link, useRouter } from "expo-router";
-import { FontAwesome } from "@expo/vector-icons"; // Google + GitHub
+import { AntDesign, FontAwesome } from "@expo/vector-icons"; // Google + GitHub
 
 
 export default function SignUpScreen() {
@@ -136,15 +136,12 @@ export default function SignUpScreen() {
         {/* Social Buttons */}
         <View className="flex-row justify-between space-x-4 mb-4">
           <TouchableOpacity className="flex-1 border border-gray-300 rounded-lg py-3 flex-row justify-center items-center mr-2">
-            <Image
-              source={{ uri: "https://www.svgrepo.com/show/475656/google-color.svg" }}
-              className="w-5 h-5 mr-2"
-            />
-            <Text className="text-gray-700 font-medium">Google</Text>
+            <AntDesign name="google" size={20} />
+            <Text className="ml-2 text-gray-700">Google</Text>
           </TouchableOpacity>
           <TouchableOpacity className="flex-1 border border-gray-300 rounded-lg py-3 flex-row justify-center items-center">
-            <FontAwesome name="github" size={25} color="#333" />
-            <Text className="text-gray-700 font-medium">  GitHub</Text>
+            <AntDesign name="github" size={20} color="#333" />
+            <Text className="ml-2 text-gray-700">GitHub</Text>
           </TouchableOpacity>
         </View>
 
